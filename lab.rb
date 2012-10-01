@@ -8,7 +8,7 @@ suits = {D: "Diamonds", H: "Hearts", C: "Clubs", S: "Spades"}
 # (e.g., "Ace", "Queen", "9" etc.) followed 
 # by its full suit name ("Hearts", "Spades", etc.).
 
-suits.each_value do |suit|
+suits.each do |key, suit|
 
 	13.times do |num| 
 		rank = case num
@@ -23,6 +23,22 @@ suits.each_value do |suit|
 	end	
 	
 end
+	
+puts "=======================================\n"
+
+13.times do |num| 
+	suits.each do |key, suit|
+		rank = case num
+			when 0 then "ace"
+			when 1..9 then num + 1
+			when 10 then "jack"
+			when 11 then "queen"
+			else 
+				"king"
+		end		
+		puts "#{rank} of #{suit}"
+	end	
+end	
 	
 
 
